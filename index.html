@@ -5,10 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+
+    <script src="js/scripts.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
+    <div class ="title"><h1 class ="yup">Crystals Collector</h1></div>
+    <div class ="instructions"><p class ="instructionText">
+        You will be given a random number at the start of the game. <br><br>
+        There are four crystals below. By clicking on a crystal you will add
+        a specific amount of points to your total score. <br><br>
+        You win the game by matching your total score to random number. You
+        lose the game if your total score goes above the random number.<br><br>
+        The value of each crystal is hidden from you until you click on it. <br><br>
+        Each time when the game starts, the game will change the values of each crystal.</p>
+    </p></div>
+    <div class = "targetScore">
+
+    </div>
+    <div class = "score">
+        <p class = "scoreText"></p>
+        <p class = "winsText">wins: </p>
+        <p class = "lossesText">losses: </p>
+
+    </p></div>
+
+    <script>
+    /*At start of the game, generate a random number value(19-120) called target to display in a box
+                            generate a variable number called total with a value of 0 and display it in its own box
+                            generate a hidden random number value (1-12) for each of the 4 crystals
     
+    add a box containing "wins: (value)"
+                            when the value of target === total, add 1 win, add text "You Won", and reset game (if)
+
+              containing "losses: (value)"
+                            when the cale of target > total, add 1 loss, add text "You Lost", and reset game (if)
+    */
+
+    //When clicking each crystal, add its hidden number value to the total
+
+    //add variables
+
+    var total = 0;
+
+    var gem1 = 0;
+    var gem2 = 0;
+    var gem3 = 0;
+    var gem4 = 0;
+    var target = 0;
+
+    
+    //create function to reset the game
+    function startGame(){
+        total = 0;
+        var target = math.floor(Math.random() * 120)+ 19;
+        var gem1 = math.floor(Math.random() * 12)+ 1;
+        var gem2 = math.floor(Math.random() * 12)+ 1;
+        var gem3 = math.floor(Math.random() * 12)+ 1;
+        var gem4 = math.floor(Math.random() * 12)+ 1;
+        console.log(target);
+        console.log(gem1);
+        console.log(gem2);
+        console.log(gem3);
+        console.log(gem4);
+
+
+    }
+
+
+
+
+    startGame();
+
+    </script>
 </body>
 </html>

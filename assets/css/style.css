@@ -1,0 +1,51 @@
+h1{
+    font-size: 60px;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+.title{
+    background-color: rgb(21, 110, 151);
+    height: 100px;
+    width: 500px;
+    border: solid;
+    border-color: rgb(236, 202, 88);
+    border-width: 10px;
+    
+}
+.instructions{
+    background-color: #ffb42a;
+    height: 400px;
+    width: 600px;
+}
+.instructionText{
+    font-size: 25px;
+    color: #003169;
+    padding: 5px;
+}
+.score{
+    background-color:#00c97c;
+    border:solid;
+    border-color: #005281;
+    height:100px;
+    width:300px; 
+}
+.winsText{
+    font-size: 25px;
+    color: #003169;
+    padding: 5px;
+}
+.lossesText{
+    font-size: 25px;
+    color: #003169;
+    padding: 5px;
+}
+.targetScore{
+    background-color: #aeecf7;
+    height:100px;
+    width:400px;
+    font-size:50px;
+    border: solid;
+    border-color: #0097bd
+
+}
