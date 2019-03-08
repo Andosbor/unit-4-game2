@@ -11,30 +11,38 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     
-
-    <script src="js/scripts.js"></script>
-    <script src="main.js"></script>
 </head>
 <body>
-    <div class ="title"><h1 class ="yup">Crystals Collector</h1></div>
+    <img class ="dance" src ="assets/images/osrsEmote.gif" alt = "do a little dance">
+    <div class ="title"><h1 class ="yup">OSRS Gem Collector</h1></div>
     <div class ="instructions"><p class ="instructionText">
-        You will be given a random number at the start of the game. <br><br>
-        There are four crystals below. By clicking on a crystal you will add
-        a specific amount of points to your total score. <br><br>
-        You win the game by matching your total score to random number. You
-        lose the game if your total score goes above the random number.<br><br>
-        The value of each crystal is hidden from you until you click on it. <br><br>
-        Each time when the game starts, the game will change the values of each crystal.</p>
-    </p></div>
-    <div class = "targetScore">
+            You will be given a random number at the start of the game. <br><br>
+            There are four gems below. By clicking on a gem you will add
+            a specific amount of points to your total score. <br><br>
+            You win the game by matching your total score to random number. You
+            lose the game if your total score goes above the random number.<br><br>
+            The value of each gem is hidden from you until you click on it. <br><br>
+            Each time when the game starts, the game will change the values of each gem.</p>
+        </p></div>
 
+    </p></div>
+    <div class = "total">
+        
+    </div>
+    <div class = "targetScore">
+        
     </div>
     <div class = "score">
         <p class = "scoreText"></p>
-        <p class = "winsText">wins: </p>
-        <p class = "lossesText">losses: </p>
+        <p class = "winsText">wins: 0</p>
+        <p class = "lossesText">losses: 0</p>
 
-    </p></div>
+    </p></div><br><br><br><br><br><br><br>
+
+    <img class ="gem" id = "sapphire" src ="assets/images/Uncut_sapphire_detail.png" alt = "Sapphire">
+    <img class ="gem" id = "emerald" src ="assets/images/Uncut_emerald_detail.png" alt = "Emerald">
+    <img class ="gem" id = "ruby" src ="assets/images/Uncut_ruby_detail.png" alt = "Ruby">
+    <img class ="gem" id = "diamond" src ="assets/images/Uncut_diamond_detail.png" alt = "Diamond">
 
     <script>
     /*At start of the game, generate a random number value(19-120) called target to display in a box
@@ -45,43 +53,114 @@
                             when the value of target === total, add 1 win, add text "You Won", and reset game (if)
 
               containing "losses: (value)"
-                            when the cale of target > total, add 1 loss, add text "You Lost", and reset game (if)
+                            when the value of target > total, add 1 loss, add text "You Lost", and reset game (if)
     */
 
     //When clicking each crystal, add its hidden number value to the total
 
     //add variables
+    startGame();
+    var totalScore;
 
-    var total = 0;
-
-    var gem1 = 0;
-    var gem2 = 0;
-    var gem3 = 0;
-    var gem4 = 0;
-    var target = 0;
+    var gem1;
+    var gem2;
+    var gem3;
+    var gem4;
+    var target;
+    var wins;
+    var losses;
 
     
     //create function to reset the game
     function startGame(){
-        total = 0;
-        var target = math.floor(Math.random() * 120)+ 19;
-        var gem1 = math.floor(Math.random() * 12)+ 1;
-        var gem2 = math.floor(Math.random() * 12)+ 1;
-        var gem3 = math.floor(Math.random() * 12)+ 1;
-        var gem4 = math.floor(Math.random() * 12)+ 1;
-        console.log(target);
+        totalScore = 0;
+        var target = Math.floor(Math.random() * 120)+ 19;
+        var gem1 = Math.floor(Math.random() * 12)+ 1;
+        var gem2 = Math.floor(Math.random() * 12)+ 1;
+        var gem3 = Math.floor(Math.random() * 12)+ 1;
+        var gem4 = Math.floor(Math.random() * 12)+ 1;
+
+        console.log("totalScore: " + totalScore)
+        console.log("target: " + target);
+        console.log("gem1: " + gem1);
+        console.log("gem2: " + gem2);
+        console.log("gem3: " + gem3);
+        console.log("gem4: " + gem4);
+    
+
+    //button on click
+    $("#sapphire").on("click", function() {
+        
+        totalScore = totalScore + gem1;
+        console.log(totalScore);
         console.log(gem1);
+        $(".total").html(totalScore);
+        if(totalScore === target){
+        console.log("You Win");
+    }
+        if(totalScore > target){
+        console.log("You Lose");
+    }
+        
+    });
+    $("#emerald").on("click", function() {
+        totalScore = totalScore + gem2;
         console.log(gem2);
-        console.log(gem3);
-        console.log(gem4);
-
-
+        console.log(totalScore);
+        $(".total").html(totalScore);
+        if(totalScore === target){
+        console.log("You Win");
+    }
+        if(totalScore > target){
+        console.log("You Lose");
     }
 
+    });
+    $("#ruby").on("click", function() {
+        totalScore = totalScore + gem3;
+        console.log(gem3);
+        console.log(totalScore);
+        $(".total").html(totalScore);
+        if(totalScore === target){
+        console.log("You Win");
+    }
+        if(totalScore > target){
+        console.log("You Lose");
+    }
+
+    });
+    $("#diamond").on("click", function() {
+        totalScore = totalScore + gem4;
+        console.log(gem4);
+        console.log(totalScore);
+        $(".total").html(totalScore);
+        if(totalScore === target){
+        console.log("You Win");
+    }
+        if(totalScore > target){
+        console.log("You Lose");
+    }
+
+    });
+
+    $(".total").html(totalScore);
+    $(".targetScore").html(target);
+
+    if(totalScore === target){
+        console.log("You Win")
+    }
+
+    if(totalScore > target){
+        console.log("You Lose")
+    }
+
+    }
+    
 
 
+    
 
-    startGame();
+   
 
     </script>
 </body>
