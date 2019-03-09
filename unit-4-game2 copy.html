@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +61,7 @@
 
     //add variables
     
-
+    
     var wins = 0;
     var losses = 0;
  debugger;
@@ -110,24 +111,7 @@
         console.log(gem1);
         $(".total").html(totalScore);
 
-        if(totalScore === target){
-        console.log("You Win");
-        //problem code
-        wins++;
-        totalScore = 0;
-        $(".scoreText").html("You Win");
-        $(".winsText").html("wins: " + wins);
-        startGame();
-    }
-        else if(totalScore > target){
-        console.log("You Lose");
-        //problem code
-        losses++;
-        totalScore = 0;
-        $(".scoreText").html("You Lose");
-        $(".lossesText").html("losses: " + losses);
-        startGame();
-    }
+        winOrLoss();
         
     });
     $("#emerald").on("click", function() {
@@ -139,24 +123,7 @@
         console.log("totalScore: " + totalScore);
         $(".total").html(totalScore);
 
-        if(totalScore === target){
-        console.log("You Win");
-        //problem code
-        wins++;
-        totalScore = 0;
-        $(".scoreText").html("You Win");
-        $(".winsText").html("wins: " + wins);
-        startGame();
-    }
-        else if(totalScore > target){
-        console.log("You Lose");
-        //problem code
-        losses++;
-        totalScore = 0;
-        $(".scoreText").html("You Lose");
-        $(".lossesText").html("losses: " + losses);
-        startGame();
-    }
+        winOrLoss()
 
     });
     $("#ruby").on("click", function() {
@@ -165,22 +132,7 @@
         console.log(totalScore);
         $(".total").html(totalScore);
 
-        if(totalScore === target){
-        console.log("You Win");
-        wins++;
-        totalScore = 0;
-        $(".scoreText").html("You Win");
-        $(".winsText").html("wins: " + wins);
-        startGame();
-    }
-        else if(totalScore > target){
-        console.log("You Lose");
-        losses++;
-        totalScore = 0;
-        $(".scoreText").html("You Lose");
-        $(".lossesText").html("losses: " + losses);
-        startGame();
-    }
+        winOrLoss();
 
     });
     $("#diamond").on("click", function() {
@@ -189,22 +141,7 @@
         console.log(totalScore);
         $(".total").html(totalScore);
 
-        if(totalScore === target){
-        console.log("You Win");
-        wins++;
-        totalScore = 0;
-        $(".scoreText").html("You Win");
-        $(".winsText").html("wins: " + wins);
-        startGame();
-    }
-        else if(totalScore > target){
-        console.log("You Lose");
-        losses++;
-        totalScore = 0;
-        $(".scoreText").html("You Lose");
-        $(".lossesText").html("losses: " + losses);
-        startGame();
-    }
+        winOrLoss();
 
     });
 
@@ -215,9 +152,20 @@
 
     }
 
-    //function winOrLoss() {
-        //if else logic in here
-    //}
+    function winOrLoss() {
+        if(totalScore === target){
+        console.log("You Win");
+        wins++;
+        $(".winsText").html("wins: " + wins);
+        startGame();
+    }
+        else if(totalScore > target){
+        console.log("You Lose");
+        losses++;
+        $(".lossesText").html("losses: " + losses);
+        startGame();
+    }
+    }
     startGame();
 
 

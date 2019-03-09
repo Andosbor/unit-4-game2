@@ -37,19 +37,24 @@ h1{
     border:solid;
     border-color: #005281;
     height:100px;
-    width:300px; 
+    width:175px; 
     float:left;
     margin: 5px;
 }
 .winsText{
     font-size: 25px;
     color: #003169;
-    padding: 5px;
+    padding: 2px;
 }
 .lossesText{
     font-size: 25px;
     color: #003169;
-    padding: 5px;
+    padding: 2px;
+}
+.scoreText{
+    font-size: 25px;
+    color: #003169;
+    padding: 2px;
 }
 .total{
     float:left;
