@@ -1,2 +1,3 @@
 # unit-4-game2
 This assignment was fun to make as I was able to have some creativity go into it. It also was pretty straightforward for the most part. However, trouble came toward the part when I believed I was almost finished. The game worked for the most part but had a bug with the scoreboard not updating correctly. That's the part where it about doubled my work time on this project trying different ways to fix it with help from TA's and my tutor.  I found out I'd need to make a pretty big overhaul to my code to fix it because I put basically all my code into one function. So long story short, I learned my lesson on not putting everything into one big function anymore.
+https://andosbor.github.io/unit-4-game2/
